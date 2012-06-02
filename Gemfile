@@ -23,3 +23,4 @@ gem "rolify", ">= 3.1.0"
 gem "twitter-bootstrap-rails", ">= 2.0.3", :group => :assets
 gem "therubyracer", :group => :assets, :platform => :ruby
 gem "simple_form"
+gem "heroku"
