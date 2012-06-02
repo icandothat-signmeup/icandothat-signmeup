@@ -1,6 +1,9 @@
-%h3 Users
-- @users.each do |user|
-  = form_tag user_session_path do
-    = text_field_tag 'user[email]', user.email
-    = password_field_tag 'user[password]', 'password'    
-    %button Sign in
+- if user_signed_in?
+  #calendar
+- else
+  %h3 Users
+  - @users.each do |user|
+    = form_tag user_session_path do
+      = text_field_tag 'user[email]', user.email
+      = password_field_tag 'user[password]', 'password'
+      %button Sign in
