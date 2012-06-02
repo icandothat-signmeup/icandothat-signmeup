@@ -1,2 +1,6 @@
-%h3 Home
-#calendar
+%h3 Users
+- @users.each do |user|
+  = form_tag user_session_path do
+    = text_field_tag 'user[email]', user.email
+    = password_field_tag 'user[password]', 'password'    
+    %button Sign in
