@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120602161739) do
+ActiveRecord::Schema.define(:version => 20120602175038) do
+
+  create_table "events", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "location"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer  "min_volunteers"
+    t.integer  "max_volunteers"
+    t.string   "commitment_type"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "name"
