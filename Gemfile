@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 gem 'rails', '3.2.5'
-gem 'sqlite3'
 gem 'jquery-rails'
 gem "haml", ">= 3.1.6"
 gem "haml-rails", ">= 0.3.4", :group => :development
