@@ -5,12 +5,60 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-puts 'SETTING UP DEFAULT USER LOGIN'
-user = User.create! :name => 'First User', :email => 'user@example.com', :password => 'please', :password_confirmation => 'please', :confirmed_at => Time.now.utc
+
+
+
+puts 'SETTING UP USERS'
+
+user = User.create! :name => 'CB Genrich', 
+  :email => 'cb@genrich.us', 
+  :password => 'password', 
+  :password_confirmation => 'password', 
+  :confirmed_at => Time.now.utc
+user.add_role :coordinator
 puts 'New user created: ' << user.name
-user2 = User.create! :name => 'Second User', :email => 'user2@example.com', :password => 'please', :password_confirmation => 'please', :confirmed_at => Time.now.utc
-puts 'New user created: ' << user2.name
-user.add_role :admin
+
+user = User.create! :name => 'Corinne Fenner', 
+  :email => 'corinne@genrich.us', 
+  :password => 'password', 
+  :password_confirmation => 'password', 
+  :confirmed_at => Time.now.utc
+user.add_role :coordinator
+puts 'New user created: ' << user.name
+
+user = User.create! :name => 'John Galbary', 
+  :email => 'john@genrich.us', 
+  :password => 'password', 
+  :password_confirmation => 'password', 
+  :confirmed_at => Time.now.utc
+user.add_role :event_leader
+puts 'New user created: ' << user.name
+
+user = User.create! :name => 'Lindsey Whatever', 
+  :email => 'lindsey@genrich.us', 
+  :password => 'password', 
+  :password_confirmation => 'password', 
+  :confirmed_at => Time.now.utc
+user.add_role :event_leader
+puts 'New user created: ' << user.name
+
+user = User.create! :name => 'Carol Gist', 
+  :email => 'carol@genrich.us', 
+  :password => 'password', 
+  :password_confirmation => 'password', 
+  :confirmed_at => Time.now.utc
+user.add_role :volunteer
+puts 'New user created: ' << user.name
+
+user = User.create! :name => 'Joe Merritt', 
+  :email => 'joe@genrich.us', 
+  :password => 'password', 
+  :password_confirmation => 'password', 
+  :confirmed_at => Time.now.utc
+user.add_role :volunteer
+puts 'New user created: ' << user.name
+
+
 
 puts 'SETTING UP DEFAULT EVENTS'
 event = Event.create! :title => 'Canoe Tour',

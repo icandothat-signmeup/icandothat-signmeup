@@ -3,9 +3,26 @@ class Ability
 
   def initialize(user)
     user ||= User.new # guest user (not logged in)
-    if user.has_role? :admin
-      can :manage, :all
+
+##    if user.has_role? :admin
+##      can :manage, :all
+##    end
+
+    if user.has_role? :coordinator
+      can :commit, :all
+      can :crud_events, :all
+      can :accept, :all
+      can :proxy, :all
+      can :crud_users, :all
+    elsif user.has_role? :event_leader
+      can :commit, :all
+      can :crud_events, :all
+      can :accept, :all
+      can :proxy, :all
+    else # user.has_role? :volunteer
+      can :commit, :all
     end
+
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
