@@ -18,6 +18,8 @@ gem "twitter-bootstrap-rails", ">= 2.0.3", :group => :assets
 gem "therubyracer", :group => :assets, :platform => :ruby
 gem "simple_form"
 gem "heroku"
+gem "fullcalendar-rails"
+gem 'jquery-rest-rails'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
