@@ -17,10 +17,11 @@ $(document).ready(function() {
         slotMinutes: 15,
         
         loading: function(bool){
-            if (bool) 
-                $('#loading').show();
-            else 
-                $('#loading').hide();
+            if (bool) {
+              $('#loading').show();
+						} else {
+              $('#loading').hide();
+						}
         },
         
         // a future calendar might have many sources.        
@@ -49,6 +50,11 @@ $(document).ready(function() {
           // would like a lightbox here.
         },
 	});
+
+	// Extremely kludgy bug fix since full_calendar doesn't play well with Twitter bootstrap
+	// See http://code.google.com/p/fullcalendar/issues/detail?id=1292
+	$("table.fc-header:last").hide();
+	$("div.fc-content:last").hide();
 });
 
 function updateEvent(the_event) {
