@@ -129,7 +129,12 @@ Here are some general guidelines for contributing:
 Credits
 --------------
 
-TBD
+CB Genrich
+Alan Hecht
+Al Snow
+Dan Schlossberg
+Ed La Hoz
+deltatangomike
 
 
 README FORMAT
