@@ -19,13 +19,6 @@ class Event < ActiveRecord::Base
       :textColor => 'black',
       :url => Rails.application.routes.url_helpers.event_path(id)
     }
-    
-  # i've offered - commitment status
-  # they accepted - commitment status
-  # I've committed - commitment status
-  # open/avail - event open
-  # closed/not avail - already booked up -  number of committed commitments exceeds event max
-  
   end
   
   def self.format_date(date_time)
@@ -37,18 +30,18 @@ class Event < ActiveRecord::Base
       commitment = User.current_user.commitments.find_by_event_id(self.id)
       unless commitment.nil?
         if commitment.status == 'OFFERED'
-          'yellow'
+          '#FFFF84'
         elsif commitment.status == 'ACCEPTED'
-          'blue'
+          '#BEFEEB'
         elsif commitment.status == 'COMMITTED'
-          'green'
+          '#B3FF99'
         end
       else
         commitment_count = Commitment.where(:event_id => self.id, :status => 'COMMITTED').length
         if commitment_count >= self.max_volunteers
-          'red'
+          '#FF9797'
         else
-          'orange'
+          '#F5F0DD'
         end
       end
     else
