@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   devise :invitable, :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  cattr_accessor :current_user
+
   has_many :commitments
   has_many :events, :through => :commitments
 

@@ -15,7 +15,7 @@ class Event < ActiveRecord::Base
       :end => end_time.rfc822,
       :allDay => false,
       :recurring => false,
-      :color => 'yellow',
+      :color => self.event_status,
       :textColor => 'black',
       :url => Rails.application.routes.url_helpers.event_path(id)
     }
@@ -30,5 +30,29 @@ class Event < ActiveRecord::Base
   
   def self.format_date(date_time)
     Time.at(date_time.to_i).to_formatted_s(:db)
+  end
+
+  def event_status
+    unless User.current_user.nil?
+      commitment = User.current_user.commitments.find_by_event_id(self.id)
+      unless commitment.nil?
+        if commitment.status == 'OFFERED'
+          'yellow'
+        elsif commitment.status == 'ACCEPTED'
+          'blue'
+        elsif commitment.status == 'COMMITTED'
+          'green'
+        end
+      else
+        commitment_count = Commitment.where(:event_id => self.id, :status => 'COMMITTED').length
+        if commitment_count >= self.max_volunteers
+          'red'
+        else
+          'orange'
+        end
+      end
+    else
+      'red'
+    end
   end
 end

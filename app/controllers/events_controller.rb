@@ -4,6 +4,7 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
+    User.current_user = current_user
 
     respond_to do |format|
       format.html # index.html.erb
