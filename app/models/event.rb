@@ -15,9 +15,17 @@ class Event < ActiveRecord::Base
       :end => end_time.rfc822,
       :allDay => false,
       :recurring => false,
+      :color => 'yellow',
+      :textColor => 'black',
       :url => Rails.application.routes.url_helpers.event_path(id)
     }
     
+  # i've offered - commitment status
+  # they accepted - commitment status
+  # I've committed - commitment status
+  # open/avail - event open
+  # closed/not avail - already booked up -  number of committed commitments exceeds event max
+  
   end
   
   def self.format_date(date_time)
