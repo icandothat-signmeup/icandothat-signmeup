@@ -11,15 +11,13 @@ DESCRIPTION
 
 Icandothat-signmeup is a way to offer to sign up for volunteer actvities.
 
-Icandothat-signmeup is still in early development, 
-so now is the time to make your mark on the project.
+Icandothat-signmeup is still in early development, so now is the time to make your mark on the project.
 
 
 FEATURES/PROBLEMS
 ------------------
 
-* Please use the [issue queue] in Pivotal Tracker instead of
-    Github issues. https://www.pivotaltracker.com/projects/565693
+* Please use the [issue queue] in Pivotal Tracker instead of Github issues. https://www.pivotaltracker.com/projects/565693
 
 
 SYNOPSYS
@@ -90,8 +88,7 @@ HERKOKU SETUP
 TO CONTRIBUTE
 ----------------
 
-icandothat-signmeup is currently welcoming contributions.
-If you'd like to help:
+icandothat-signmeup is currently welcoming contributions. If you'd like to help:
 
 Here are some general guidelines for contributing:
 
@@ -129,7 +126,8 @@ Here are some general guidelines for contributing:
 * Also attend the <Emerald City> Saturday classes.
 
 
-h2. Credits
+Credits
+--------------
 
 TBD
 
