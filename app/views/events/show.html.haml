@@ -25,6 +25,14 @@
   %b Commitment type:
   = @event.commitment_type
 
+- if user_signed_in?
+  - if @commitment
+    %p
+      %b Commitment Status
+      = @commitment.status
+  - else
+    = link_to "Volunteer", commitments_path(:event_id => @event.id), :method => :post
+                                   
 = link_to 'Edit', edit_event_path(@event)
 \|
 = link_to 'Back', events_path

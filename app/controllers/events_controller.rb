@@ -16,6 +16,7 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @event = Event.find(params[:id])
+    @commitment = current_user.commitments.find_by_event_id(@event.id)
 
     respond_to do |format|
       format.html # show.html.erb

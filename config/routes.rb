@@ -1,5 +1,6 @@
 IcandothatSignmeup::Application.routes.draw do
   resources :events
+  resources :commitments
 
   authenticated :user do
     root :to => 'home#index'
