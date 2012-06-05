@@ -26,18 +26,11 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
+
 group :production do 
   gem 'pg'
 end
 
 group :development, :test do
-  gem 'sqlite3'
-end
-
-group :development do 
-  
-end
-
-group :test do
-  gem 'sqlite3'
+  gem 'pg'
 end
