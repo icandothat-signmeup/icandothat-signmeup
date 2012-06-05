@@ -130,7 +130,6 @@ Credits
 --------------
 
 CB Genrich
-Alan Hecht
 Al Snow
 Dan Schlossberg
 Ed La Hoz
