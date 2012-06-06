@@ -53,6 +53,16 @@ INSTALL
     in a web browser.
 
 
+HOW TO USE POSTGRES INSTEAD OF SQLITE3 (ASSUMING NO DATA IN DATABASE)
+---------------
+
+Assuming you have postgres installed in your environment, here are the extra steps needed prior to running "rails server".
+
+ * Run "pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start" to start up the database server.
+  * FYI: To stop, do this: "pg_ctl -D /usr/local/var/postgres stop -s -m fast"
+ * Run "rake db:drop:all db:create:all db:migrate db:seed" to create the database tables and seed the initial seed data.
+
+
 HERKOKU SETUP
 ---------------
 
