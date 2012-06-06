@@ -3,6 +3,7 @@ icandothat-signmeup
 ===================
 
 repo   :: https://github.com/icandothat-signmeup/icandothat-signmeup
+heroku :: http://smu.herokuapp.com/
 heroku :: http://rhok-atl-park.herokuapp.com/
 
 

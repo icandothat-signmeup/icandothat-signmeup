@@ -17,21 +17,20 @@ IcandothatSignmeup::Application.configure do
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.delivery_method = :smtp
   # change to true to allow email to be sent during development
-  config.action_mailer.perform_deliveries = false
-  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+  # DON'T CARE IF THE MAILER CAN'T SEND.
+  config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default :charset => "utf-8"
 
   config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
     port: 587,
-    domain: "icandothat.org",
+    domain: "smu.herokuapp.com",
     authentication: "plain",
     enable_starttls_auto: true,
     user_name: "rhokicandothat",
     password: "this15rails"
   }
-
-
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log

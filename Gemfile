@@ -34,3 +34,5 @@ end
 group :development, :test do
   gem 'pg'
 end
+
+gem "letter_opener", :group => :development
