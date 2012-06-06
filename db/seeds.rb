@@ -11,7 +11,7 @@
 puts 'SETTING UP USERS'
 
 user = User.create! :name => 'CB Genrich', 
-  :email => 'cb2@genrich.us', 
+  :email => 'cb@genrich.us', 
   :password => 'password', 
   :password_confirmation => 'password', 
   :confirmed_at => Time.now.utc
